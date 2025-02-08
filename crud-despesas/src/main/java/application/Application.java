@@ -5,18 +5,42 @@ import model.Categoria;
 import model.Despesa;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 public class Application {
     public static void main(String[] args) {
+
         DespesaDAO dao = new DespesaDAO();
+       /*
+        List<Despesa> despesas = dao.findAll();
 
-         Despesa despesa = new Despesa();
-         despesa.setDescricao("Pagamento do Aluguel");
-         despesa.setCategoria(Categoria.MORADIA);
-         despesa.setValor(1200);
-         despesa.setData(LocalDate.of(2021,5,20));
 
-         dao.save(despesa);
+        for (Despesa despesa: despesas){
+            System.out.println("----------------------------------");
+            System.out.println("ID: " + despesa.getId());
+            System.out.println("Descrição: " + despesa.getDescricao());
+            System.out.println("Valor: " + despesa.getValor());
+        }
+
+           Optional<Despesa> optionalDespesa= dao.findById(2L);
+        optionalDespesa.ifPresent(despesa -> {
+            System.out.println("----------------------------------");
+            System.out.println("ID: " + despesa.getId());
+            System.out.println("Descrição: " + despesa.getDescricao());
+            System.out.println("Valor: " + despesa.getValor());
+        });
+
+        */
+
+        List<Despesa> despesas = dao.findByCategoria(Categoria.TRANSPORTE);
+        for (Despesa despesa: despesas){
+            System.out.println("----------------------------------");
+            System.out.println("ID: " + despesa.getId());
+            System.out.println("Descrição: " + despesa.getDescricao());
+            System.out.println("Categoria - " + despesa.getCategoria());
+            System.out.println("Valor: " + despesa.getValor());
+        }
 
     }
 }
