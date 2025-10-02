@@ -1,4 +1,4 @@
-# Projeto CRUD de Despesas - Java, JDBC e DAO
+# Projeto CRUD de Despesas 
 
 Este projeto é uma aplicação simples para gerenciar **despesas**, implementada utilizando **Java**, **JDBC** (Java Database Connectivity) e o padrão **DAO** (Data Access Object). O objetivo é fornecer uma interface para realizar operações **CRUD** (Criar, Ler, Atualizar e Deletar) sobre um banco de dados, especificamente para controle de despesas de um usuário.
 
